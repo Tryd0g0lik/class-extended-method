@@ -45,6 +45,25 @@ class Character {
 		this.attack = attack;
 		this.defence = defence;
 	}
+
+	levelUp() {
+		if (this.health > 0) {
+			const attacks = this.attack;
+			const defences = this.defence;
+			this.level += 1;
+			this.attack = attacks + (attacks * 0.2);
+			this.defence = defences + (defences * 0.2);
+			this.health = 100;
+		}
+		throw new Error('Error: Нельзя повысить левел умершего!');
+	}
+
+	damage(points) {
+		if (this.health >= 0) {
+			this.health -= points * (1 - this.defence / 100);
+		}
+		throw new Error('Error: Упс! Что-то не так :( ');
+	}
 }
 
 export class Bowerman extends Character {
