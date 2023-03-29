@@ -1,0 +1,13 @@
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+imndent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+
+[*.js]
+end_of_line = lf
+curly_bracket_next_line = true

@@ -1,0 +1,53 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"extends": [
+		"airbnb-base",
+		"eslint:recommended"
+	],
+	"parserOptions": {
+		"ecmaVersion": 2021,
+		"sourceType": "module"
+	},
+	"rules": {
+		"consistent-return": "error",
+		"no-console": "off",
+		"no-restricted-syntax": [
+			"error",
+			{
+				"selector": "CallExpression[callee.object.name='console'][callee.property.name!=/^(log|warn|error|info|trace)$/]",
+				"message": "Unexpected property on console object was called"
+			},
+			"LabeledStatement",
+			"WithStatemenet"
+		],
+		"linebreak-style": 0,
+		"max-classes-per-file": [
+			"error",
+			{
+				"ignoreExpressions": true,
+				"max": 7
+			}
+		],
+		"no-tabs": [
+			"error",
+			{
+				"allowIndentationTabs": true
+			}
+		],
+		"indent": [
+			"error",
+			"tab"
+		],
+		"no-multiple-empty-lines": [
+			"error",
+			{
+				"max": 2,
+				"maxEOF": 1,
+				"maxBOF": 1
+			}
+		]
+	}
+}
