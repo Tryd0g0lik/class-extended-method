@@ -18,16 +18,16 @@ describe('the La Croix cans on my desk', () => {
 describe('my beverage', () => {
 	test('is delicious and not sour', () => {
 		const hero = new app.Bowerman('выф');
-		// const hero = new app.Bowerman('мечник');
-		// const myBeverage = {
-		// 	name: hero.name,
-		// 	type: hero.type,
-		// 	attack: hero.attack,
-		// 	defence: hero.defence,
-		// 	health: hero.health,
-		// 	level: hero.level,
-		// };
 		expect(new app.Bowerman('dsasd')).toEqual({
+			name: hero.name,
+			type: hero.type,
+			attack: hero.attack,
+			defence: hero.defence,
+			health: hero.health,
+			level: hero.level,
+		});
+
+		expect(new app.Bowerman('12354')).toEqual({
 			name: hero.name,
 			type: hero.type,
 			attack: hero.attack,
