@@ -110,5 +110,5 @@ describe('The damage method will been tasting for a class Character', () => {
 			obj.health = 1000;
 			obj.damage(2);
 		}).not.toThrow();
-	})
+	});
 });

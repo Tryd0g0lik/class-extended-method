@@ -39,7 +39,7 @@ export class Character {
 
 	async checks(n) {
 		await (() => {
-			const re = /^\W*[^\d{1}\s{1}/\_=.]/i;
+			const re = /^\W*[^\d{1}\s{1}/\\_=.]/i;
 			if (typeof n === 'string' && n.length >= 2 && n.length <= 10
 				&& re.test(n) === true) {
 				this.name = n;
@@ -80,50 +80,49 @@ export class Bowerman extends Character {
 	}
 }
 
-// зАКОММЕНТИРОВАНЫ ОДНОТИПНЫЕ функции для проверки методов тестированием
+// зАКОММЕНТИРОВАть ОДНОТИПНЫЕ функции для работы с тестированием
 
-// export class Swordsman extends Character {
-// 	constructor(name) {
-// 		super(name);
-// 		super.type = 'Swordsman';
-// 		super.attack = 40;
-// 		super.defence = 10;
-// 	}
-// }
-// export class Magician extends Character {
-// 	constructor(name) {
-// 		super(name);
-// 		super.type = 'Magician';
-// 		super.attack = 10;
-// 		super.defence = 40;
-// 	}
-// }
-// export class Daemon extends Character {
-// 	constructor(name) {
-// 		super(name);
-// 		super.type = 'Daemon';
-// 		super.attack = 10;
-// 		super.defence = 40;
-// 	}
-// }
-// export class Undead extends Character {
-// 	constructor(name) {
-// 		super(name);
-// 		super.type = 'Undead';
-// 		super.attack = 25;
-// 		super.defence = 25;
-// 	}
-// }
-// export class Zombie extends Character {
-// 	constructor(name) {
-// 		super(name);
-// 		super.type = 'Zombie';
-// 		super.attack = 40;
-// 		super.defence = 10;
-// 	}
-// }
+export class Swordsman extends Character {
+	constructor(name) {
+		super(name);
+		super.type = 'Swordsman';
+		super.attack = 40;
+		super.defence = 10;
+	}
+}
 
-// // const heros = new Bowerman('Magus');
-// // console.log(heros);
-// // console.log(heros.name);
+export class Magician extends Character {
+	constructor(name) {
+		super(name);
+		super.type = 'Magician';
+		super.attack = 10;
+		super.defence = 40;
+	}
+}
 
+export class Daemon extends Character {
+	constructor(name) {
+		super(name);
+		super.type = 'Daemon';
+		super.attack = 10;
+		super.defence = 40;
+	}
+}
+
+export class Undead extends Character {
+	constructor(name) {
+		super(name);
+		super.type = 'Undead';
+		super.attack = 25;
+		super.defence = 25;
+	}
+}
+
+export class Zombie extends Character {
+	constructor(name) {
+		super(name);
+		super.type = 'Zombie';
+		super.attack = 40;
+		super.defence = 10;
+	}
+}
