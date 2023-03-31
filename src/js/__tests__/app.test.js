@@ -1,3 +1,5 @@
+// => How write a test for a testing async method or function?
+
 /* eslint-disable no-undef */
 /* eslint-disable import/extensions */
 import * as app from '../app.js';

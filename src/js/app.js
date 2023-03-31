@@ -26,6 +26,7 @@ export function cortedHeroes(h) {
 	}
 }
 
+// HOMEWORKs
 export class Character {
 	constructor(name, type, attack, defence) {
 		this.type = type;
