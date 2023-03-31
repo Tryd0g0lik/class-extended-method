@@ -26,24 +26,25 @@ export function cortedHeroes(h) {
 	}
 }
 
-class Character {
+export class Character {
 	constructor(name, type, attack, defence, health = 100, level = 1) {
-		this.name = (() => {
-			if (name.length >= 2 && name.lrngth <= 10) {
-				return name;
-			}
-			throw new Error("Количество символов должно быть'name' от 2 до 10");
-		})();
-		this.type = (() => {
-			if (type in ['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie']) {
-				return type;
-			}
-			throw new Error('Заявленный тип не соответствует ни одному из имеющихся: Bowman, Swordsman, Magician, Daemon, Undead, Zombie');
-		})();
+		this.type = type;
+		this.checks(name);
 		this.health = health;
 		this.level = level;
 		this.attack = attack;
 		this.defence = defence;
+	}
+
+	async checks(n) {
+		await (() => {
+			const re = /^\W*[^\d{1}\s{1}/\_=.]/i;
+			if (typeof n === 'string' && n.length >= 2 && n.length <= 10 && re.test(n) === true) {
+				this.name = n;
+			} else {
+				throw new Error(`Cо свойством {name: '${n}'} что-то не верно!`);
+			}
+		})();
 	}
 
 	levelUp() {
@@ -115,3 +116,7 @@ export class Zombie extends Character {
 		super.defence = 10;
 	}
 }
+
+// const heros = new Bowerman('Magus');
+// console.log(heros);
+// console.log(heros.name);

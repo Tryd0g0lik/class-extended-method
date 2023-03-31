@@ -1,4 +1,6 @@
 /* eslint-disable no-undef */
+/* eslint-disable import/extensions */
+
 import { loadUser } from '../user';
 import { httpGet } from '../http';
 
@@ -7,7 +9,6 @@ jest.mock('../http');
 beforeEach(() => {
 	jest.resetAllMocks();
 });
-
 test('should call loadUser once', () => {
 	httpGet.mockReturnValue(JSON.stringify({}));
 
