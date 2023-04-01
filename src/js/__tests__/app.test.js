@@ -23,7 +23,7 @@ describe('Through a Bowerman method will been checking a "name" properte', () =>
 	test('test 1', () => {
 		// const hero = new app.Bowerman('выф');
 		expect(() => {
-			new app.Bowerman('выф');
+			new app.Bowerman('выф', 'Bowman', 25, 25);
 		}).not.toThrow();
 	});
 });
@@ -33,7 +33,7 @@ describe('Through a Bowerman method will been checking a "name" properte', () =>
 describe('Methods will been testing of the Character class', () => {
 	test(' levelUp method and a health properte - With Errors Test № 1 ', () => {
 		expect(() => {
-			const obj = new app.Bowerman('Маг');
+			const obj = new app.Bowerman('Маг', 'Bowman', 25, 25);
 			obj.health = 0; // Переписываем св-во объекта
 			obj.levelUp();
 		}).toThrow();
@@ -41,7 +41,7 @@ describe('Methods will been testing of the Character class', () => {
 
 	test('levelUp mrthod and a health properte - With Errors Test №2', () => {
 		expect(() => {
-			const obj = new app.Bowerman('Маг');
+			const obj = new app.Bowerman('Маг', 'Bowman', 25, 25);
 			obj.health = 0; // Переписываем св-во объекта
 			obj.levelUp();
 		}).toThrow();
@@ -49,7 +49,7 @@ describe('Methods will been testing of the Character class', () => {
 
 	test('levelUp method and a health properte - With Errors Test №3', () => {
 		expect(() => {
-			const obj = new app.Bowerman('Маг');
+			const obj = new app.Bowerman('Маг', 'Bowman', 25, 25);
 			obj.health = -1; // Переписываем св-во объекта
 			obj.levelUp();
 		}).toThrow();
@@ -57,7 +57,7 @@ describe('Methods will been testing of the Character class', () => {
 
 	test('levelUp method and a health properte - Eithout Errors Test №3', () => {
 		expect(() => {
-			const obj = new app.Bowerman('Маг');
+			const obj = new app.Bowerman('Маг', 'Bowman', 25, 25);
 			obj.health = 1; // Переписываем св-во объекта
 			obj.levelUp();
 		}).not.toThrow();
@@ -65,7 +65,7 @@ describe('Methods will been testing of the Character class', () => {
 
 	test('levelUp method and a health properte - Eithout Errors Test №4', () => {
 		expect(() => {
-			const obj = new app.Bowerman('Маг');
+			const obj = new app.Bowerman('Маг', 'Bowman', 25, 25);
 			obj.health = 100; // Переписываем св-во объекта
 			obj.levelUp();
 		}).not.toThrow();
@@ -73,7 +73,7 @@ describe('Methods will been testing of the Character class', () => {
 
 	test('levelUp method and a health properte - Eithout Errors Test №5', () => {
 		expect(() => {
-			const obj = new app.Bowerman('Маг');
+			const obj = new app.Bowerman('Маг', 'Bowman', 25, 25);
 			obj.health = 1101; // Переписываем св-во объекта
 			obj.levelUp();
 		}).not.toThrow();
@@ -83,14 +83,14 @@ describe('Methods will been testing of the Character class', () => {
 describe('The damage method will been tasting for a class Character', () => {
 	test('Testing', () => {
 		expect(() => {
-			const obj = new app.Bowerman('Magus');
+			const obj = new app.Bowerman('Magus', 'Bowman', 25, 25);
 			obj.damage(2);
 		}).not.toThrow();
 	});
 
 	test('Testing 2', () => {
 		expect(() => {
-			const obj = new app.Bowerman('Magus');
+			const obj = new app.Bowerman('Magus', 'Bowman', 25, 25);
 			obj.health = -10;
 			obj.damage(2);
 		}).toThrow();
@@ -98,7 +98,7 @@ describe('The damage method will been tasting for a class Character', () => {
 
 	test('Test 3', () => {
 		expect(() => {
-			const obj = new app.Bowerman('Magus');
+			const obj = new app.Bowerman('Magus', 'Bowman', 25, 25);
 			obj.health = 0;
 			obj.damage(2);
 		}).not.toThrow();
@@ -106,7 +106,7 @@ describe('The damage method will been tasting for a class Character', () => {
 
 	test('Test 4 ', () => {
 		expect(() => {
-			const obj = new app.Bowerman('Magus');
+			const obj = new app.Bowerman('Magus', 'Bowman', 25, 25);
 			obj.health = 1000;
 			obj.damage(2);
 		}).not.toThrow();

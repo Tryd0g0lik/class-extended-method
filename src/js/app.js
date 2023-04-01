@@ -29,15 +29,15 @@ export function cortedHeroes(h) {
 // HOMEWORKs
 export class Character {
 	constructor(name, type, attack, defence) {
-		this.type = type;
-		this.checks(name);
+		this.checks(name, type);
 		this.health = 100;
 		this.level = 1;
 		this.attack = attack;
 		this.defence = defence;
 	}
 
-	async checks(n) {
+	async checks(n, t) {
+		// console.log('t: ', t);
 		await (() => {
 			const re = /^\W*[^\d{1}\s{1}/\\_=.]/i;
 			if (typeof n === 'string' && n.length >= 2 && n.length <= 10
@@ -46,6 +46,16 @@ export class Character {
 			} else {
 				throw new Error(`Cо свойством {name: '${n}'} что-то не верно!`);
 			}
+		})();
+		await (() => {
+			const typesList = ['Bowman', 'Swordsman', 'Magician', 'Undead', 'Zombie', 'Daemon'];
+			for (let i = 0; i < typesList.length; i += 1) {
+				if (t === typesList[i]) {
+					this.type = t;
+					return undefined;
+				}
+			}
+			throw new Error(`Упс! Данный {type: '${t}'} не предусмотрен приложением!`);
 		})();
 	}
 
@@ -72,57 +82,57 @@ export class Character {
 }
 
 export class Bowerman extends Character {
-	constructor(name) {
-		super(name);
-		super.type = 'Bowman';
-		super.attack = 25;
-		super.defence = 25;
+	constructor(name, type = 'Bowman', attack = 25, defence = 25) {
+		super(name, type, attack, defence);
+		this.type = type; // 'Bowman';
+		this.attack = attack;
+		this.defence = defence;
 	}
 }
 
-// зАКОММЕНТИРОВАть ОДНОТИПНЫЕ функции для работы с тестированием
 
+// зАКОММЕНТИРОВАть ОДНОТИПНЫЕ функции для работы с тестированием
 export class Swordsman extends Character {
-	constructor(name) {
-		super(name);
-		super.type = 'Swordsman';
-		super.attack = 40;
-		super.defence = 10;
+	constructor(name, type = 'Swordsman', attack = 40, defence = 10) {
+		super(name, type, attack, defence);
+		this.type = type; // 'Swordsman';
+		this.attack = attack;
+		this.defence = defence;
 	}
 }
 
 export class Magician extends Character {
-	constructor(name) {
-		super(name);
-		super.type = 'Magician';
-		super.attack = 10;
-		super.defence = 40;
+	constructor(name, type = 'Magician', attack = 10, defence = 40) {
+		super(name, type, attack, defence);
+		this.type = type; // 'Magician';
+		this.attack = attack;
+		this.defence = defence;
 	}
 }
 
 export class Daemon extends Character {
-	constructor(name) {
-		super(name);
-		super.type = 'Daemon';
-		super.attack = 10;
-		super.defence = 40;
+	constructor(name, type = 'Daemon', attack = 10, defence = 40) {
+		super(name, type, attack, defence);
+		this.type = type; // 'Daemon';
+		this.attack = attack;
+		this.defence = defence;
 	}
 }
 
 export class Undead extends Character {
-	constructor(name) {
-		super(name);
-		super.type = 'Undead';
-		super.attack = 25;
-		super.defence = 25;
+	constructor(name, type = 'Undead', attack = 25, defence = 25) {
+		super(name, type, attack, defence);
+		this.type = type; // 'Undead';
+		this.attack = attack;
+		this.defence = defence;
 	}
 }
 
 export class Zombie extends Character {
-	constructor(name) {
-		super(name);
-		super.type = 'Zombie';
-		super.attack = 40;
-		super.defence = 10;
+	constructor(name, type = 'Zombie', attack = 40, defence = 10) {
+		super(name, type, attack, defence);
+		this.type = type; // 'Zombie';
+		this.attack = attack;
+		this.defence = defence;
 	}
 }
